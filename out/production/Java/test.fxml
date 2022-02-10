@@ -1,0 +1,698 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GameController">
+   <children>
+      <SplitPane fx:id="fight" dividerPositions="0.08321775312066575" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="723.0" prefWidth="1080.0" style="visibility: false;" styleClass="forest" stylesheets="@styleAcceuil.css">
+        <items>
+          <AnchorPane cache="true" minHeight="0.0" minWidth="0.0" opacity="0.58" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: black; -fx-background-radius: 50;">
+               <children>
+                  <Label fx:id="pseudoFight" layoutX="99.0" layoutY="6.0" text="PSEUDO" textFill="WHITE">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="turn" layoutX="497.0" layoutY="4.0" text="TURN" textFill="WHITE">
+                     <font>
+                        <Font size="33.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="enemyName" layoutX="803.0" layoutY="7.0" prefHeight="43.0" prefWidth="264.0" text="ENEMY" textFill="WHITE">
+                     <font>
+                        <Font size="29.0" />
+                     </font>
+                  </Label>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <Text fx:id="yourAttack" fill="WHITE" layoutX="22.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" style="visibility: false;" text="you launch a basic attack on this monster that inflicts 10 damage" wrappingWidth="264.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <Pane layoutX="-1.0" layoutY="440.0" opacity="0.85" prefHeight="222.0" prefWidth="1080.0" style="-fx-background-color: black; -fx-border-color: grey; -fx-border-width: 5; -fx-border-radius: 10;">
+                     <children>
+                        <Label fx:id="hpFight" layoutX="27.0" layoutY="15.0" prefHeight="43.0" prefWidth="179.0" text="HP:" textFill="WHITE">
+                           <font>
+                              <Font size="29.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="manaFight" layoutX="23.0" layoutY="57.0" prefHeight="43.0" prefWidth="185.0" text="Mana:" textFill="WHITE">
+                           <font>
+                              <Font size="29.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="levelFight" layoutX="23.0" layoutY="100.0" prefHeight="43.0" prefWidth="185.0" text="LEVEL:" textFill="WHITE">
+                           <font>
+                              <Font size="29.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="goldFight" layoutX="23.0" layoutY="143.0" prefHeight="43.0" prefWidth="185.0" text="GOLD:" textFill="WHITE">
+                           <font>
+                              <Font size="29.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="basicAttack" layoutX="479.0" layoutY="18.0" mnemonicParsing="false" onAction="#basicAttack" prefHeight="37.0" prefWidth="140.0" styleClass="texture" text="BASIC ATTACK" textFill="WHITE">
+                           <font>
+                              <Font size="13.0" />
+                           </font></Button>
+                        <Button fx:id="magicAttack" layoutX="479.0" layoutY="82.0" mnemonicParsing="false" onAction="#magicAttack" prefHeight="37.0" prefWidth="140.0" styleClass="texture" text="MAGIC ATTACK" textFill="WHITE">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Button>
+                        <Button fx:id="skipTurn" layoutX="479.0" layoutY="145.0" mnemonicParsing="false" onAction="#skipTurn" prefHeight="39.0" prefWidth="140.0" styleClass="texture" text="SKIP TURN" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Button>
+                        <Label fx:id="enemyHp" layoutX="860.0" layoutY="15.0" prefHeight="43.0" prefWidth="185.0" text="HP:" textFill="WHITE">
+                           <font>
+                              <Font size="29.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="enemyMana" layoutX="861.0" layoutY="62.0" prefHeight="43.0" prefWidth="192.0" text="Mana:" textFill="WHITE">
+                           <font>
+                              <Font size="29.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="enemyLevel" layoutX="859.0" layoutY="115.0" prefHeight="43.0" prefWidth="179.0" text="LEVEL:" textFill="WHITE">
+                           <font>
+                              <Font size="29.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <ImageView fx:id="test" fitHeight="323.0" fitWidth="235.0" layoutX="22.0" layoutY="131.0" pickOnBounds="true" preserveRatio="true" styleClass="mage">
+                     <image>
+                        <Image url="@images/warrior.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="enemyImage" fitHeight="239.0" fitWidth="329.0" layoutX="732.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/enemyWarrior.png" />
+                     </image>
+                  </ImageView>
+                  <Pane fx:id="deathAlert" layoutX="147.0" layoutY="107.0" prefHeight="444.0" prefWidth="749.0" style="visibility: FALSE;" styleClass="error">
+                     <children>
+                        <Button layoutX="50.0" layoutY="359.0" mnemonicParsing="false" onAction="#titleScreen" prefHeight="57.0" prefWidth="277.0" style="-fx-background-color: null;" text="back to title screen" textFill="WHITE">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Button>
+                        <Text fill="WHITE" layoutX="57.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your are dead." wrappingWidth="264.0">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="deathReason" fill="WHITE" layoutX="78.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="YOU ARE DEAD BY RETURN TO TITLE SCREEN" wrappingWidth="358.0">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="winAlert" layoutX="168.0" layoutY="64.0" prefHeight="402.0" prefWidth="708.0" style="visibility: false;" styleClass="error">
+                     <children>
+                        <Button layoutX="42.0" layoutY="324.0" mnemonicParsing="false" onAction="#charScreen" prefHeight="57.0" prefWidth="264.0" style="-fx-background-color: null;;" text="back to the village" textFill="WHITE">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Button>
+                        <Text fill="WHITE" layoutX="68.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You have won !" wrappingWidth="264.0">
+                           <font>
+                              <Font size="32.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="raisonMort11" fill="WHITE" layoutX="68.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Well done, you have beaten all the monsters in the dungeon!" wrappingWidth="305.138671875">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="nextCombatAlert" layoutX="274.0" layoutY="93.0" prefHeight="316.0" prefWidth="558.0" style="visibility: false;" styleClass="error">
+                     <children>
+                        <Button layoutX="34.0" layoutY="255.0" mnemonicParsing="false" onAction="#nextCombat" prefHeight="39.0" prefWidth="210.0" style="-fx-background-color: null;" text="Next Fight" textFill="WHITE">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Button>
+                        <Text fill="WHITE" layoutX="34.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You won this fight" wrappingWidth="264.0">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="raisonMort111" fill="WHITE" layoutX="34.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Go to the next fight!" wrappingWidth="171.9830722808838">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="selectLevel" layoutX="184.0" layoutY="103.0" opacity="0.7" prefHeight="330.0" prefWidth="740.0" style="-fx-background-color: black; visibility: true; -fx-border-color: grey; -fx-border-width: 5; -fx-background-radius: 10; -fx-border-radius: 10; visibility: false;">
+                     <children>
+                        <Button layoutX="34.0" layoutY="233.0" mnemonicParsing="false" onAction="#improveHp" prefHeight="42.0" prefWidth="140.0" styleClass="texture" text="HP" textFill="WHITE">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Button>
+                        <Text fill="WHITE" layoutX="34.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Well done you have gained a level" wrappingWidth="384.0">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="raisonMort1111" fill="WHITE" layoutX="34.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="please select an improvement" wrappingWidth="223.9830722808838">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                        </Text>
+                        <Text fill="WHITE" layoutX="44.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+ 10 HP MAX">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Text>
+                        <Button layoutX="300.0" layoutY="233.0" mnemonicParsing="false" onAction="#improveMana" prefHeight="42.0" prefWidth="140.0" styleClass="texture" text="Mana" textFill="WHITE">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Button>
+                        <Text fill="WHITE" layoutX="296.0" layoutY="307.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+ 10 MANA MAX">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Text>
+                        <Button layoutX="556.0" layoutY="233.0" mnemonicParsing="false" onAction="#improveWeapon" prefHeight="42.0" prefWidth="140.0" styleClass="texture" text="Weapon" textFill="WHITE">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Button>
+                        <Text fill="WHITE" layoutX="521.0" layoutY="309.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+10 WEAPON DAMAGE">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="manaAlert" layoutX="258.0" layoutY="63.0" prefHeight="363.0" prefWidth="598.0" style="visibility: false;" styleClass="error">
+                     <children>
+                        <Button layoutX="39.0" layoutY="296.0" mnemonicParsing="false" onAction="#closeManaAlert" prefHeight="45.0" prefWidth="224.0" style="-fx-background-color: null;" text="CLOSE" textFill="WHITE">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Button>
+                        <Text fill="WHITE" layoutX="53.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You don't have enough mana" wrappingWidth="264.0">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="raisonMort1" fill="WHITE" layoutX="53.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wait until the next turn for you to regen the mana." wrappingWidth="238.8780517578125">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="enemyDialogueAttack" layoutX="402.0" layoutY="6.0" opacity="0.68" prefHeight="239.0" prefWidth="404.0" style="visibility: false;" styleClass="dialogueBoxRight">
+                     <children>
+                        <Text fx:id="enemyAttack" fill="WHITE" layoutX="57.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="I used that against you that caused damage haha" wrappingWidth="264.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="enemyCriticalStrike" fill="RED" layoutX="99.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" style="visibility: false;" text="CRITICAL STRIKE">
+                           <font>
+                              <Font size="33.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </Pane>
+                  <Text fx:id="yourCriticalStrike" fill="RED" layoutX="19.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" style="visibility: false;" text="CRITICAL STRIKE">
+                     <font>
+                        <Font size="33.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+      <SplitPane fx:id="village" dividerPositions="0.045706371191135735" orientation="VERTICAL" prefHeight="724.0" prefWidth="1080.0" style="visibility: true;" styleClass="village" stylesheets="@styleAcceuil.css">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" opacity="0.65" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: black; -fx-background-radius: 20;">
+               <children>
+                  <Label fx:id="welcomeVIllage" layoutX="320.0" layoutY="-3.0" text="WELCOME TO THE VILLAGE PSEUDO" textFill="WHITE">
+                     <font>
+                        <Font size="27.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <ImageView fx:id="characterImage" fitHeight="249.0" fitWidth="265.0" layoutX="121.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/warrior.png" />
+                     </image>
+                  </ImageView>
+                  <Pane layoutX="13.0" layoutY="309.0" opacity="0.79" prefHeight="363.0" prefWidth="575.0" style="-fx-background-color: black; -fx-border-color: grey; -fx-border-width: 5; -fx-border-radius: 10; -fx-background-radius: 10;">
+                     <children>
+                        <ImageView fx:id="weapon" fitHeight="140.0" fitWidth="150.0" layoutX="45.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/ironSword.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="secondaryWeapon" fitHeight="150.0" fitWidth="200.0" layoutX="45.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/woodenShield.png" />
+                           </image>
+                        </ImageView>
+                        <Text fill="WHITE" layoutX="160.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="YOUR EQUIPMENT" textAlignment="CENTER">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                        <Label fx:id="weaponName" layoutX="198.0" layoutY="75.0" text="NAME:" textFill="#f8f8f8">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="weaponDamage" layoutX="193.0" layoutY="122.0" text="DAMAGE:" textFill="#f8f8f8">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="secondaryWeaponName" layoutX="207.0" layoutY="209.0" text="NAME:" textFill="#f8f8f8">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="secondaryWeaponDamage" layoutX="205.0" layoutY="260.0" text="BLOCK:" textFill="#f8f8f8">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Label>
+                        <ChoiceBox fx:id="armeEquipe" layoutX="411.0" layoutY="169.0" prefWidth="150.0" styleClass="texture" />
+                        <Button layoutX="428.0" layoutY="209.0" mnemonicParsing="false" onAction="#changerArme" prefHeight="41.0" prefWidth="103.0" styleClass="texture" text="validate change" textFill="WHITE" />
+                        <Text fill="WHITE" layoutX="409.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Change your weapon">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="781.0" layoutY="35.0" opacity="0.79" prefHeight="180.0" prefWidth="264.0" style="-fx-background-color: black; -fx-border-color: grey; -fx-border-width: 5; -fx-border-radius: 10; -fx-background-radius: 10;">
+                     <children>
+                        <Button layoutX="150.0" layoutY="18.0" mnemonicParsing="false" onAction="#openShop" prefHeight="91.0" prefWidth="103.0" style="-fx-background-radius: 50;" styleClass="shopIcon" stylesheets="@styleAcceuil.css" />
+                        <Text fill="WHITE" layoutX="144.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="THE SHOP">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                        <Label fx:id="gold" layoutX="14.0" layoutY="49.0" text="GOLD:" textFill="WHITE">
+                           <font>
+                              <Font size="27.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="671.0" layoutY="343.0" opacity="0.79" prefHeight="239.0" prefWidth="358.0" style="-fx-background-color: black; -fx-border-color: grey; -fx-border-width: 5; -fx-border-radius: 10; -fx-background-radius: 10;">
+                     <children>
+                        <Button fx:id="fightButton" layoutX="28.0" layoutY="20.0" mnemonicParsing="false" onAction="#fight" prefHeight="74.0" prefWidth="121.0" style="-fx-background-radius: 10;" styleClass="fightIcon" />
+                        <Button fx:id="save" layoutX="98.0" layoutY="120.0" mnemonicParsing="false" onAction="#save" prefHeight="74.0" prefWidth="121.0" style="-fx-background-radius: 10;" styleClass="saveIcon" stylesheets="@styleAcceuil.css" />
+                        <Text fill="WHITE" layoutX="152.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SEARCH FOR A FIGHT">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Text>
+                        <Text fill="WHITE" layoutX="238.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SAVE">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </Pane>
+                  <Label fx:id="hp" layoutX="379.0" layoutY="60.0" opacity="0.58" prefHeight="39.0" prefWidth="129.0" style="-fx-background-color: black;" text="HP:" textFill="WHITE">
+                     <font>
+                        <Font size="27.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="mana" layoutX="379.0" layoutY="106.0" opacity="0.58" prefHeight="39.0" prefWidth="129.0" style="-fx-background-color: black;" text="MANA:" textFill="WHITE">
+                     <font>
+                        <Font size="27.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="level" layoutX="379.0" layoutY="150.0" opacity="0.58" prefHeight="39.0" prefWidth="129.0" style="-fx-background-color: black;" text="LEVEL:" textFill="WHITE">
+                     <font>
+                        <Font size="27.0" />
+                     </font>
+                  </Label>
+                  <Pane fx:id="shopPane" layoutX="-1.0" layoutY="-6.0" prefHeight="698.0" prefWidth="1078.0" style="-fx-background-color: black; -fx-border-color: grey; -fx-border-width: 5; -fx-border-radius: 10; -fx-background-radius: 10; visibility: false;" styleClass="shop" stylesheets="@styleAcceuil.css">
+                     <children>
+                        <ImageView fitHeight="249.0" fitWidth="276.0" layoutX="51.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/seller.png" />
+                           </image>
+                        </ImageView>
+                        <TabPane fx:id="warriorShop" layoutX="405.0" layoutY="119.0" opacity="0.76" prefHeight="511.0" prefWidth="644.0" style="-fx-background-color: black;" tabClosingPolicy="UNAVAILABLE">
+                          <tabs>
+                            <Tab id="tab1" styleClass="texture" text="Dark Sword">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <ImageView fitHeight="239.0" fitWidth="224.0" layoutX="30.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/darkSword.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Text fill="WHITE" layoutX="270.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TEST TEST TEST TEST TEST TEST TEST TEST TEST" wrappingWidth="338.1103515625">
+                                             <font>
+                                                <Font size="43.0" />
+                                             </font>
+                                          </Text>
+                                          <Button layoutX="355.0" layoutY="360.0" mnemonicParsing="false" onAction="#buyDarkSword" prefHeight="43.0" prefWidth="121.0" styleClass="texture" text="PAY" textFill="WHITE">
+                                             <font>
+                                                <Font size="23.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                              <Tab id="tab1" styleClass="texture" text="Fire Sword">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <ImageView fitHeight="239.0" fitWidth="224.0" layoutX="30.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/fireSword.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Text fill="WHITE" layoutX="270.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TEST TEST TEST TEST TEST TEST TEST TEST TEST" wrappingWidth="338.1103515625">
+                                             <font>
+                                                <Font size="43.0" />
+                                             </font>
+                                          </Text>
+                                          <Button layoutX="355.0" layoutY="360.0" mnemonicParsing="false" onAction="#buyFireSword" prefHeight="43.0" prefWidth="121.0" styleClass="texture" text="PAY" textFill="WHITE">
+                                             <font>
+                                                <Font size="23.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                              <Tab id="tab1" styleClass="texture" text="Golden Shield">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <ImageView fitHeight="239.0" fitWidth="224.0" layoutX="30.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/goldenShield.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Text fill="WHITE" layoutX="270.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TEST TEST TEST TEST TEST TEST TEST TEST TEST" wrappingWidth="338.1103515625">
+                                             <font>
+                                                <Font size="43.0" />
+                                             </font>
+                                          </Text>
+                                          <Button layoutX="355.0" layoutY="360.0" mnemonicParsing="false" onAction="#buyGoldenShield" prefHeight="43.0" prefWidth="121.0" styleClass="texture" text="PAY" textFill="WHITE">
+                                             <font>
+                                                <Font size="23.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                              <Tab id="tab1" styleClass="texture" text="Magical Shield">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <ImageView fitHeight="239.0" fitWidth="224.0" layoutX="30.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/magicalShield.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Text fill="WHITE" layoutX="270.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TEST TEST TEST TEST TEST TEST TEST TEST TEST" wrappingWidth="338.1103515625">
+                                             <font>
+                                                <Font size="43.0" />
+                                             </font>
+                                          </Text>
+                                          <Button layoutX="355.0" layoutY="360.0" mnemonicParsing="false" onAction="#buyMagicalShield" prefHeight="43.0" prefWidth="121.0" styleClass="texture" text="PAY" textFill="WHITE">
+                                             <font>
+                                                <Font size="23.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                              <Tab>
+                                 <graphic>
+                                    <Button mnemonicParsing="false" onAction="#closeShop" styleClass="texture" text="CLOSE" />
+                                 </graphic>
+                              </Tab>
+                          </tabs>
+                        </TabPane>
+                        <Text fill="WHITE" layoutX="29.0" layoutY="352.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to my store help yourself but don't forget to pay me!" wrappingWidth="305.138671875">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                        <TabPane fx:id="mageShop" layoutX="415.0" layoutY="129.0" opacity="0.76" prefHeight="511.0" prefWidth="644.0" style="-fx-background-color: black;" tabClosingPolicy="UNAVAILABLE">
+                           <tabs>
+                              <Tab id="tab1" styleClass="texture" text="FIre Staff">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <ImageView fitHeight="239.0" fitWidth="224.0" layoutX="30.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/fireStaff.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Text fill="WHITE" layoutX="270.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TEST TEST TEST TEST TEST TEST TEST TEST TEST" wrappingWidth="338.1103515625">
+                                             <font>
+                                                <Font size="43.0" />
+                                             </font>
+                                          </Text>
+                                          <Button layoutX="355.0" layoutY="360.0" mnemonicParsing="false" onAction="#buyFireSword" prefHeight="43.0" prefWidth="121.0" styleClass="texture" text="PAY" textFill="WHITE">
+                                             <font>
+                                                <Font size="23.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                              <Tab id="tab1" styleClass="texture" text="Ice Staff">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <ImageView fitHeight="239.0" fitWidth="224.0" layoutX="30.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/iceStaff.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Text fill="WHITE" layoutX="270.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TEST TEST TEST TEST TEST TEST TEST TEST TEST" wrappingWidth="338.1103515625">
+                                             <font>
+                                                <Font size="43.0" />
+                                             </font>
+                                          </Text>
+                                          <Button layoutX="355.0" layoutY="360.0" mnemonicParsing="false" onAction="#buyIceStaff" prefHeight="43.0" prefWidth="121.0" styleClass="texture" text="PAY" textFill="WHITE">
+                                             <font>
+                                                <Font size="23.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                              <Tab id="tab1" styleClass="texture" text="Golden Shield">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <ImageView fitHeight="239.0" fitWidth="224.0" layoutX="30.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/goldenShield.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Text fill="WHITE" layoutX="270.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TEST TEST TEST TEST TEST TEST TEST TEST TEST" wrappingWidth="338.1103515625">
+                                             <font>
+                                                <Font size="43.0" />
+                                             </font>
+                                          </Text>
+                                          <Button layoutX="355.0" layoutY="360.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="121.0" styleClass="texture" text="PAY" textFill="WHITE">
+                                             <font>
+                                                <Font size="23.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                              <Tab id="tab1" styleClass="texture" text="Magical Shield">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <ImageView fitHeight="239.0" fitWidth="224.0" layoutX="30.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/magicalShield.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Text fill="WHITE" layoutX="270.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TEST TEST TEST TEST TEST TEST TEST TEST TEST" wrappingWidth="338.1103515625">
+                                             <font>
+                                                <Font size="43.0" />
+                                             </font>
+                                          </Text>
+                                          <Button layoutX="355.0" layoutY="360.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="121.0" styleClass="texture" text="PAY" textFill="WHITE">
+                                             <font>
+                                                <Font size="23.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                              <Tab>
+                                 <graphic>
+                                    <Button mnemonicParsing="false" onAction="#closeShop" styleClass="texture" text="CLOSE" />
+                                 </graphic>
+                              </Tab>
+                           </tabs>
+                        </TabPane>
+                        <TabPane fx:id="hunterShop" layoutX="425.0" layoutY="139.0" opacity="0.76" prefHeight="511.0" prefWidth="644.0" style="-fx-background-color: black;" tabClosingPolicy="UNAVAILABLE">
+                           <tabs>
+                              <Tab id="tab1" styleClass="texture" text="Iron Bow">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <ImageView fitHeight="239.0" fitWidth="224.0" layoutX="30.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/ironBow.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Text fill="WHITE" layoutX="270.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TEST TEST TEST TEST TEST TEST TEST TEST TEST" wrappingWidth="338.1103515625">
+                                             <font>
+                                                <Font size="43.0" />
+                                             </font>
+                                          </Text>
+                                          <Button layoutX="355.0" layoutY="360.0" mnemonicParsing="false" onAction="#buyIronBow" prefHeight="43.0" prefWidth="121.0" styleClass="texture" text="PAY" textFill="WHITE">
+                                             <font>
+                                                <Font size="23.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                              <Tab id="tab1" styleClass="texture" text="Poison Bow">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <ImageView fitHeight="239.0" fitWidth="224.0" layoutX="30.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/poisonBow.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Text fill="WHITE" layoutX="270.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TEST TEST TEST TEST TEST TEST TEST TEST TEST" wrappingWidth="338.1103515625">
+                                             <font>
+                                                <Font size="43.0" />
+                                             </font>
+                                          </Text>
+                                          <Button layoutX="355.0" layoutY="360.0" mnemonicParsing="false" onAction="#buyPoisonBow" prefHeight="43.0" prefWidth="121.0" styleClass="texture" text="PAY" textFill="WHITE">
+                                             <font>
+                                                <Font size="23.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                              <Tab id="tab1" styleClass="texture" text="Golden Shield">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <ImageView fitHeight="239.0" fitWidth="224.0" layoutX="30.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/goldenShield.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Text fill="WHITE" layoutX="270.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TEST TEST TEST TEST TEST TEST TEST TEST TEST" wrappingWidth="338.1103515625">
+                                             <font>
+                                                <Font size="43.0" />
+                                             </font>
+                                          </Text>
+                                          <Button layoutX="355.0" layoutY="360.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="121.0" styleClass="texture" text="PAY" textFill="WHITE">
+                                             <font>
+                                                <Font size="23.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                              <Tab id="tab1" styleClass="texture" text="Magical Shield">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <ImageView fitHeight="239.0" fitWidth="224.0" layoutX="30.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/magicalShield.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Text fill="WHITE" layoutX="270.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TEST TEST TEST TEST TEST TEST TEST TEST TEST" wrappingWidth="338.1103515625">
+                                             <font>
+                                                <Font size="43.0" />
+                                             </font>
+                                          </Text>
+                                          <Button layoutX="355.0" layoutY="360.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="121.0" styleClass="texture" text="PAY" textFill="WHITE">
+                                             <font>
+                                                <Font size="23.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                              <Tab>
+                                 <graphic>
+                                    <Button mnemonicParsing="false" onAction="#closeShop" styleClass="texture" text="CLOSE" />
+                                 </graphic>
+                              </Tab>
+                           </tabs>
+                        </TabPane>
+                        <Pane fx:id="notEnoughGold" layoutX="445.0" layoutY="276.0" prefHeight="354.0" prefWidth="575.0" style="visibility: false;" styleClass="error" stylesheets="@styleAcceuil.css">
+                           <children>
+                              <Text fill="WHITE" layoutX="48.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You don't have enough money to buy this item" wrappingWidth="479.0">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Text>
+                              <Button layoutX="39.0" layoutY="286.0" mnemonicParsing="false" onAction="#closeNotEnoughMoney" prefHeight="49.0" prefWidth="216.0" style="-fx-background-color: null;" text="CLOSE" textFill="WHITE">
+                                 <font>
+                                    <Font size="23.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </Pane>
+                     </children>
+                  </Pane>
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</Pane>

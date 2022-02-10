@@ -1,0 +1,11 @@
+Warrior
+100
+50
+0
+test
+woodenSword
+5
+woodenSword.png
+woodenShield
+5
+woodenShield.png

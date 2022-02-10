@@ -1,0 +1,9 @@
+Warrior
+100
+50
+0
+
+woodenSword
+5
+woodenShield
+5

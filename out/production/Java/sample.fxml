@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<SplitPane dividerPositions="0.10301507537688442" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="747.0" prefWidth="1101.0" styleClass="tavern" stylesheets="@styleAcceuil.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" opacity="0.62" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: black; -fx-background-radius: 100;">
+         <children>
+            <Text fill="#e10909" layoutX="455.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GWATATO" textAlignment="CENTER" wrappingWidth="199.9830722808838">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Text>
+         </children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="392.0" prefWidth="646.0">
+         <children>
+            <Button layoutX="173.0" layoutY="158.0" mnemonicParsing="false" onAction="#createMage" prefHeight="282.0" prefWidth="170.0" style="-fx-background-radius: 50;" styleClass="mage" stylesheets="@styleAcceuil.css" />
+            <Button layoutX="480.0" layoutY="160.0" mnemonicParsing="false" onAction="#createHunter" prefHeight="282.0" prefWidth="170.0" style="-fx-background-radius: 50;" styleClass="hunter" stylesheets="@styleAcceuil.css" />
+            <Button layoutX="793.0" layoutY="158.0" mnemonicParsing="false" onAction="#createWarrior" prefHeight="282.0" prefWidth="170.0" style="-fx-background-radius: 50;" styleClass="warrior" stylesheets="@styleAcceuil.css" />
+            <Text fill="#fcfcfc" layoutX="173.0" layoutY="470.0" opacity="0.51" stroke="BLACK" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="5.0" text="MAGE" textAlignment="CENTER" wrappingWidth="170.0">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Text>
+            <Text fill="#fcfcfc" layoutX="793.0" layoutY="486.0" opacity="0.51" stroke="BLACK" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="5.0" text="WARRIOR" textAlignment="CENTER" wrappingWidth="170.0">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Text>
+            <Text fill="#fcfcfc" layoutX="480.0" layoutY="487.0" opacity="0.51" stroke="BLACK" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="5.0" text="HUNTER" textAlignment="CENTER" wrappingWidth="170.0">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Text>
+            <TextField fx:id="pseudo" alignment="CENTER" layoutX="475.0" layoutY="579.0" promptText="Your PSEUDO" style="-fx-background-color: black; -fx-background-radius: 10;" styleClass="ra" />
+            <Pane fx:id="errorPane" layoutX="137.0" layoutY="133.0" prefHeight="398.0" prefWidth="857.0" style="visibility: false;" styleClass="error" stylesheets="@styleAcceuil.css">
+               <children>
+                  <Text fill="WHITE" layoutX="70.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You did not put a PSEUDO, please put in one and after reselect your character" wrappingWidth="716.9830722808838">
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                  </Text>
+                  <Button layoutX="56.0" layoutY="324.0" mnemonicParsing="false" onAction="#closeErrorBox" prefHeight="48.0" prefWidth="315.0" style="-fx-background-color: null;" text="CLOSE" textFill="WHITE">
+                     <font>
+                        <Font size="20.0" />
+                     </font></Button>
+               </children></Pane>
+         </children></AnchorPane>
+  </items>
+</SplitPane>

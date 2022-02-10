@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="987.0" prefWidth="1504.0" style="-fx-background-image:" styleClass="acceuil" stylesheets="@styleAcceuil.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerAcceuil">
+   <children>
+      <AnchorPane layoutX="-147.0" layoutY="-75.0" prefHeight="41.0" prefWidth="489.0" style="-fx-background-color: purple;" />
+      <Button fx:id="button1" layoutX="497.0" layoutY="276.0" onAction="#handleButtonAction" prefHeight="41.0" prefWidth="431.0" styleClass="texture" stylesheets="@styleAcceuil.css" text="Creation de ton personnage" textAlignment="CENTER" textFill="#361414" AnchorPane.leftAnchor="497.0" AnchorPane.rightAnchor="576.0" AnchorPane.topAnchor="276.0">
+         <font>
+            <Font name="Cambria Bold" size="30.0" />
+         </font>
+      </Button>
+      <Button layoutX="490.0" layoutY="410.0" onAction="#chargerPersonnage" prefHeight="58.0" prefWidth="431.0" styleClass="texture" stylesheets="@styleAcceuil.css" text="Charger ton personnage" textAlignment="CENTER" textFill="#2f0d0d" AnchorPane.leftAnchor="490.0" AnchorPane.rightAnchor="583.0" AnchorPane.topAnchor="410.0">
+         <font>
+            <Font name="Cambria Bold" size="30.0" />
+         </font>
+      </Button>
+      <TextField fx:id="nameCharacter" layoutX="631.0" layoutY="740.0" prefHeight="33.0" prefWidth="163.0" promptText="Nom Personnage" AnchorPane.leftAnchor="631.0" AnchorPane.rightAnchor="710.0" AnchorPane.topAnchor="550.0" />
+   </children>
+</AnchorPane>

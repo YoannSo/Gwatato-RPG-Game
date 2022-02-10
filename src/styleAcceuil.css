@@ -1,0 +1,67 @@
+.acceuil{
+    -fx-background-image: url('rpgBackground.jpg');
+    -fx-background-size: 100% 100%;
+}
+.texture{
+    -fx-background-image: url('images/buttonTextureTest4.png');
+    -fx-background-size: 100% 100%;
+    -fx-background-radius: 10px;
+
+}
+
+.tavern{
+    -fx-background-image: url('images/tavernBackground.jpg');
+    -fx-background-size: 100% 100%;
+
+}
+.hunter{
+    -fx-background-image: url('images/hunter.jpg');
+    -fx-background-size: 100% 100%;
+
+}
+.mage{
+    -fx-background-image: url('images/mage.png');
+    -fx-background-size: 100% 100%;
+}
+.warrior{
+    -fx-background-image: url('images/warrior.png');
+    -fx-background-size: 100% 100%;
+}
+.error{
+    -fx-background-image: url('images/textBox.png');
+    -fx-background-size: 100% 100%;
+}
+.forest{
+    -fx-background-image: url('images/foretBackground.jpg');
+    -fx-background-size: 100% 100%;
+
+}
+.village{
+    -fx-background-image: url('images/villageBackground.jpg');
+    -fx-background-size: 100% 100%;
+
+}
+.shopIcon{
+    -fx-background-image: url('images/shopIcon.png');
+    -fx-background-size: 100% 100%;
+}
+.saveIcon{
+    -fx-background-image: url('images/saveIcon.png');
+    -fx-background-size: 100% 100%;
+}
+.fightIcon{
+    -fx-background-image: url('images/fightIcon.jpg');
+    -fx-background-size: 100% 100%;
+}
+.shop{
+    -fx-background-image: url('images/shop.jpg');
+    -fx-background-size: 100% 100%;
+}
+.dialogueBoxLeft{
+    -fx-background-image: url('images/dialogueBoxLeft.png');
+    -fx-background-size: 100% 100%;
+}
+.dialogueBoxRight{
+    -fx-background-image: url('images/dialogueBoxRight.png');
+    -fx-background-size: 100% 100%;
+}
